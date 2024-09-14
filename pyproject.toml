@@ -7,6 +7,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "attrs"
+version = "23.2.0.post1"
 authors = [{ name = "Hynek Schlawack", email = "hs@ox.cx" }]
 license = "MIT"
 requires-python = ">=3.7"
@@ -26,7 +27,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = ["importlib_metadata;python_version<'3.8'"]
-dynamic = ["version", "readme"]
+dynamic = ["readme"]
 
 [project.optional-dependencies]
 tests-mypy = [
@@ -69,10 +70,6 @@ GitHub = "https://github.com/python-attrs/attrs"
 Funding = "https://github.com/sponsors/hynek"
 Tidelift = "https://tidelift.com/subscription/pkg/pypi-attrs?utm_source=pypi-attrs&utm_medium=pypi"
 
-
-[tool.hatch.version]
-source = "vcs"
-raw-options = { local_scheme = "no-local-version" }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/attr", "src/attrs"]

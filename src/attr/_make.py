@@ -1041,7 +1041,10 @@ class _ClassBuilder:
             """
             Automatically created by attrs.
             """
-            return {name: getattr(self, name) for name in state_attr_names}
+            # NOTE: let's see if reverting this unbreaks anything...
+            # See also https://github.com/python-attrs/attrs/pull/1009
+            # return {name: getattr(self, name) for name in state_attr_names}
+            return tuple(getattr(self, name) for name in state_attr_names)
 
         hash_caching_enabled = self._cache_hash
 
